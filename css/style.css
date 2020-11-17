@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(67, 67, 240);
+}
+.container {
+    display: flex;
+    background-color: rgb(240, 82, 54);
+}
+
+.block {
+    display: flex;
+    background-color: rgb(240, 251, 5);
+}
+
+.itens {
+    display: flex;
+    background-color: rgb(5, 251, 26);
+}
