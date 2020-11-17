@@ -1,17 +1,19 @@
-body {
-    background-color: rgb(67, 67, 240);
-}
-.container {
-    display: flex;
-    background-color: rgb(240, 82, 54);
+
+img {
+	height: 220px;
+	width: 400px;
+	margin: auto;
 }
 
-.block {
-    display: flex;
-    background-color: rgb(240, 251, 5);
+.flex-item{
+	display: flex;
+	margin: auto;
 }
 
-.itens {
-    display: flex;
-    background-color: rgb(5, 251, 26);
+p {
+	margin: auto;
+	font-family: 'Goldman', cursive;
+	font-size: 50px	;
+	font-weight: 600;
+	text-align: left;
 }
