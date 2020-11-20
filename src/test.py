@@ -3,10 +3,10 @@ from db import *
 
 
 # rank = {'rank':[
+#       {'user': 'Oliveira',  'color': '#545454', 'score': 9100},
+# 		{'user': 'Israel',    'color': '#FF1616', 'score': 1700},
 # 		{'user': 'Saymon',    'color': '#FF1616', 'score': 1600},
 # 		{'user': 'Henrico',   'color': '#FF7637', 'score': 1400},
-# 		{'user': 'Israel',    'color': '#FF1616', 'score': 1100},
-#         {'user': 'Oliveira',  'color': '#545454', 'score': 9100},
 # 		{'user': 'Benjamin',  'color': '#F9B11F', 'score': 1100},
 # 		{'user': 'Milena',    'color': '#38B6FF', 'score': 900},
 # 		{'user': 'Gustavo',   'color': '#8C52FF', 'score': 600},
