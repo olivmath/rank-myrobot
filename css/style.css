@@ -17,3 +17,7 @@ p {
 	font-weight: 600;
 	text-align: left;
 }
+
+ul {
+	list-style: decimal;
+}
