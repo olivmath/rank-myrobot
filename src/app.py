@@ -27,7 +27,7 @@ def get_data(received):
 
 @app.route('/new-user')
 def new_user():
-	""" 
+	"""
 		Exemplo de requisição -> user: Lucas, color: #FF0, score: 9991
 		http://127.0.0.1:5000/new-user?user=Lucas&color=FF0&score=9991
 	"""
@@ -40,7 +40,7 @@ def new_user():
 
 @app.route('/update')
 def update():
-	""" 
+	"""
 		Exemplo de requisição -> user: Lucas, color: #FF0, score: +9
 		http://127.0.0.1:5000/update?user=Lucas&color=FF0&score=9
 	"""
@@ -59,9 +59,7 @@ def update():
 	else:
 		return f"""<h1>{query['user']} perdeu {request.args['score']} pontos!<h1>
 					<br> :(
-				   <h2>Pontuação total: {query['score']}<h2>"""
-	
-	
+				<h2>Pontuação total: {query['score']}<h2>"""
 
 
 if __name__ == "__main__":
