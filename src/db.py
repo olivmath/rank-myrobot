@@ -30,7 +30,7 @@ def select_all():
     data = cursor.fetchall()
     conn.commit()
 
-    rank= {'rank': []}
+    rank = {'rank': []}
     # compresão de dicionario
     for i in [i for i in data]:
         new = {'user': i[0], 'color': i[1], 'score': i[2]}
