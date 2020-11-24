@@ -1,7 +1,7 @@
 # rank-myrobot
 
 ## Back-end
-Banco de dados em SQLite salva os pontos os nome e as cores de cada nome.<br>
+Banco de dados em SQLite salva os pontos os nomes e as cores referente a cada nome.<br>
 Flask faz query, insert e update e serve no localhost.
 
 ## Front-end
