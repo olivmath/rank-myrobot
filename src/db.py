@@ -58,6 +58,9 @@ def update_db(data):
     conn.commit()
     return True
 
+6
+print(select_all())
+
 
 # rank = {'rank':[
 # 		{'user': 'Saymon',    'color': '#FF1616', 'score': 1600},
