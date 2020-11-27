@@ -1,4 +1,10 @@
-console.log('Funciona!');
+var iron = "img/Iron.png";
+var bronze = "img/Bronze.png";
+var silver = "img/Silver.png";
+var gold = "img/Gold.png";
+var adamantium = "img/Adamantium.png";
+var tungstenium = "img/Tugstenium.png";
+var vibranium = "img/Vibranium.png";
 /*
     <li>
         <div class="flex-item">
@@ -9,11 +15,10 @@ console.log('Funciona!');
     </li>
 */
 
-
 rank = {'rank':[
-    {'user': 'Lucas',  'color': '#545454', 'score': 1900},
+    {'user': 'Lucas',  'color': '#545454', 'score': 19000},
     {'user': 'Israel',    'color': '#FF1616', 'score': 8000},
-    {'user': 'Saymon',    'color': '#FF1616', 'score': 7000},
+    {'user': 'Saymon',    'color': '#aaff11', 'score': 7000},
     {'user': 'Henrico',   'color': '#FF7637', 'score': 4000},
     {'user': 'Benjamin',  'color': '#F9B11F', 'score': 2300},
     {'user': 'Milena',    'color': '#38B6FF', 'score': 1200},
@@ -21,49 +26,38 @@ rank = {'rank':[
     ]
 }
 
-var iron = "img/Iron.png";
-var bronze = "img/Bronze.png";
-var silver = "img/Silver.png";
-var gold = "img/Gold.png";
-var adamantium = "img/Adamantium.png";
-var tungstenium = "img/Tungstenium.png";
-var vibranium = "img/Vibranium.png";
-
 
 function patent(score) {
-    switch (score) {
-        case score < 1000:
-            return iron;
-            break;
-        case score >= 1000:
-            return bronze;
-            break;
-        case score >= 2000:
-                return silver;
-                break;
-        case score >= 3000:
-                return gold;
-                break;
-        case score >= 5000:
-            return adamantium;
+    switch (true) {
+        case score >= 10000:
+            return vibranium;
             break;
         case score >= 7500:
             return tungstenium;
             break;
-        case score >= 10000:
-            return vibranium;
+        case score >= 5000:
+            return adamantium;
+            break;
+        case score >= 3000:
+                return gold;
+                break;
+        case score >= 2000:
+                return silver;
+                break;
+        case score >= 1000:
+            return bronze;
             break;
         default:
+            return iron;
             break;
     }
 }
 
 
-function renderUser(data) {
-    
-    let color;
-    let name;
-    let score;
+function generatorUser(data) {
+    let color = data['color'];
+    let name = data['user'];
+    let score = data['score'];
     let img = patent(score);
 
     let li = document.createElement('li');
@@ -86,10 +80,14 @@ function renderUser(data) {
     div.appendChild(imgTag);
     li.appendChild(div);
 
-    return li;
-};
+    return li
+}
 
+function renderUsers(data) {
+    for (data of data['rank']) {
+        let user = generatorUser(data);
+        document.querySelector('ol').appendChild(user);
+    }
+}
 
-
-let a = patent(2000);
-console.log(a)
+// renderUsers(rank);
