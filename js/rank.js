@@ -1,30 +1,12 @@
-var iron = "img/Iron.png";
-var bronze = "img/Bronze.png";
-var silver = "img/Silver.png";
-var gold = "img/Gold.png";
-var adamantium = "img/Adamantium.png";
-var tungstenium = "img/Tugstenium.png";
-var vibranium = "img/Vibranium.png";
-/*
-    <li>
-        <div class="flex-item">
-            <p class="name" style="color: #FF1616;">Israel</p>
-            <p class="score">1700</p>
-            <img src="img/Bronze.png" alt="Bronze">
-        </div>
-    </li>
-*/
-
-rank = {'rank':[
-    {'user': 'Lucas',  'color': '#545454', 'score': 19000},
-    {'user': 'Israel',    'color': '#FF1616', 'score': 8000},
-    {'user': 'Saymon',    'color': '#aaff11', 'score': 7000},
-    {'user': 'Henrico',   'color': '#FF7637', 'score': 4000},
-    {'user': 'Benjamin',  'color': '#F9B11F', 'score': 2300},
-    {'user': 'Milena',    'color': '#38B6FF', 'score': 1200},
-    {'user': 'Gustavo',   'color': '#8C52FF', 'score': 600}
-    ]
-}
+const iron = "img/Iron.png";
+const bronze = "img/Bronze.png";
+const silver = "img/Silver.png";
+const gold = "img/Gold.png";
+const adamantium = "img/Adamantium.png";
+const tungstenium = "img/Tugstenium.png";
+const vibranium = "img/Vibranium.png";
+const url = "http://127.0.0.1:5000/";
+const rank = "rank"
 
 
 function patent(score) {
@@ -90,4 +72,11 @@ function renderUsers(data) {
     }
 }
 
-// renderUsers(rank);
+
+
+fetch(url+rank)
+.then(response => response.json())
+.then(jsonBody => {
+    renderUsers(jsonBody)
+})
+

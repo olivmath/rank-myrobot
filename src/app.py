@@ -1,14 +1,15 @@
 from flask import Flask, jsonify, request
 from json import loads, dump
 from db import *
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 
-
-@app.route('/home')
+@app.route('/')
 def home():
-	return 'ok!'
+	return jsonify({'status':'ok!'})
 
 
 @app.route('/rank')
