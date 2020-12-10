@@ -1,6 +1,6 @@
 import sqlite3 as sql
 
-conn = sql.connect("./Ranking.db", check_same_thread=False)
+conn = sql.connect("../Ranking.db", check_same_thread=False)
 cursor = conn.cursor()
 
 
