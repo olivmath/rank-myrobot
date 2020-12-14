@@ -10,6 +10,18 @@ pwd = '147258'
 app = Flask(__name__, static_url_path='/static')
 CORS(app)
 
+def new_user():
+	"""
+		Exemplo de requisição -> user: Lucas, color: #FF0, score: 9991
+		http://127.0.0.1:5000/new-user?user=Lucas&color=FF0&score=9991
+	"""
+	new = get_data(request.form)
+	rank = select_all()
+	rank['rank'].append(new)
+	insert(new['user'], new['color'], new['score'])
+	return f'{new}<br> Adiconado com Sucesso!'
+
+
 def get_data(received):
 	data = {
 		'user': received['user'],
@@ -33,6 +45,7 @@ def get_rank():
 @app.route('/edit')
 def edit():
 	return render_template('edit.html')
+
 
 
 @app.route('/login')
@@ -59,19 +72,6 @@ def validate():
 			return '<script>alert("Pontos Atualizados"); window.location="/edit";</script> '
 		else:
 			return '<script>alert("Campos mal preenchidos"); window.location="/edit";</script>'
-
-
-@app.route('/new-user')
-def new_user():
-	"""
-		Exemplo de requisição -> user: Lucas, color: #FF0, score: 9991
-		http://127.0.0.1:5000/new-user?user=Lucas&color=FF0&score=9991
-	"""
-	new = get_data(request.args)
-	rank = select_all()
-	rank['rank'].append(new)
-	insert(new['user'], new['color'], new['score'])
-	return f'{new}<br> Adiconado com Sucesso!'
 
 
 @app.route('/update')

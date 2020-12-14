@@ -46,17 +46,29 @@ def insert(*args):
         nome, cor, score
     """
     command = "INSERT INTO rank VALUES (?, ?, ?)"
-    cursor.executemany(command, [args])
-    conn.commit()
-    return True
+    try:
+        cursor.executemany(command, [args])
+        return args, True
+
+    except Exception as e:
+        raise f"ERRO\nOcorreu o seguinte erro\n--> {e}"
+
+    finally:
+        commit()
 
 
 # faz update de dados
 def update_db(data):
     command = f"UPDATE rank SET score = {data['score']}  where name == '{data['user']}'"
-    cursor.execute(command)
-    conn.commit()
-    return True
+    try:
+        cursor.execute(command)
+        return [data['score'], data['user']], True
+
+    except Exception as e:
+        raise f"ERRO\nOcorreu o seguinte erro\n--> {e}"
+
+    finally:
+        conn.commit()
 
 
 
