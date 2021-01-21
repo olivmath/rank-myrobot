@@ -82,19 +82,19 @@ def update_db(**data):
 
 
 
-pontos = [{'score': 400, 'name': 'Gustavo'},
-        {'score': 400, 'name': 'Daniel'},
-        {'score': 800, 'name': 'Alexandre'},
-        {'score': 400, 'name': 'Joaquim'},
-        {'score': 400, 'name': 'Luca'},
-        {'score': 600, 'name': 'Luis'},
-        {'score': 300, 'name': 'Luigi'},
-        {'score': 800, 'name': 'Victor'},
-        {'score': 800, 'name': 'Kauã'},
-        {'score': 800, 'name': 'Pedro'},
-        {'score': 600, 'name': 'Saymon'},
-        {'score': 300, 'name': 'Beijamin'},
-        {'score': 800, 'name': 'Arthur'}]
+pontos = [{'name': 'Gustavo'},
+        {'name': 'Daniel'},
+        {'name': 'Alexandre'},
+        {'name': 'Joaquim'},
+        {'name': 'Luca'},
+        {'name': 'Luis'},
+        {'name': 'Luigi'},
+        {'name': 'Victor'},
+        {'name': 'Kauã'},
+        {'name': 'Pedro'},
+        {'name': 'Saymon'},
+        {'name': 'Beijamin'},
+        {'name': 'Arthur'}]
 
 a = select_all()
 print(a)
