@@ -33,7 +33,7 @@ def select_all():
     rank = {'rank': []}
     # compresão de dicionario
     for i in [i for i in data]:
-        new = {'user': i[0], 'color': i[1], 'score': i[2]}
+        new = {'name': i[0], 'color': i[1], 'score': i[2]}
         rank['rank'].append(new)
 
     return rank
@@ -81,19 +81,21 @@ def update_db(**data):
 
 
 
-"""
-data = [{'score': 400, 'user': 'Gustavo'},
-        {'score': 400, 'user': 'Daniel'},
-        {'score': 800, 'user': 'Alexandre'},
-        {'score': 400, 'user': 'Joaquim'},
-        {'score': 400, 'user': 'Luca'},
-        {'score': 600, 'user': 'Luis'},
-        {'score': 300, 'user': 'Luigi'},
-        {'score': 800, 'user': 'Victor'},
-        {'score': 800, 'user': 'Kauã'},
-        {'score': 800, 'user': 'Pedro'},
-        {'score': 600, 'user': 'Saymon'},
-        {'score': 300, 'user': 'Beijamin'},
-        {'score': 800, 'user': 'Arthur'}]
-"""
+
+pontos = [{'score': 400, 'name': 'Gustavo'},
+        {'score': 400, 'name': 'Daniel'},
+        {'score': 800, 'name': 'Alexandre'},
+        {'score': 400, 'name': 'Joaquim'},
+        {'score': 400, 'name': 'Luca'},
+        {'score': 600, 'name': 'Luis'},
+        {'score': 300, 'name': 'Luigi'},
+        {'score': 800, 'name': 'Victor'},
+        {'score': 800, 'name': 'Kauã'},
+        {'score': 800, 'name': 'Pedro'},
+        {'score': 600, 'name': 'Saymon'},
+        {'score': 300, 'name': 'Beijamin'},
+        {'score': 800, 'name': 'Arthur'}]
+
+a = select_all()
+print(a)
 
