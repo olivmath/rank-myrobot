@@ -66,12 +66,8 @@ def verify():
 def validate():
 	if request.method == "POST":
 		form =  dict(request.form)
-		if form['color'] != '' and form['user'] != '' and form['score'] != '':
-			return '<script>alert("Novo Usuario Adicionado com Sucesso"); window.location="/edit";</script>'
-		elif form['color'] == '' and form['user'] != '' and form['score'] != '':
-			return '<script>alert("Pontos Atualizados"); window.location="/edit";</script> '
-		else:
-			return '<script>alert("Campos mal preenchidos"); window.location="/edit";</script>'
+		print(form)
+	return redirect(url_for('get_rank'))
 
 
 @app.route('/update')

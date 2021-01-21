@@ -15,20 +15,20 @@ def create_db():
 
 # pega um dado
 def select_single(query):
-    command = f"SELECT * FROM rank WHERE name == {query}"
+    command = f'SELECT * FROM rank WHERE name == "{query}"'
     cursor.execute(command)
     data = cursor.fetchall()
     conn.commit()
 
-    return data
+    return data[0]
 
 
 # pega todos dados  
 def select_all():
     command = "SELECT * FROM rank ORDER BY score desc"
     cursor.execute(command)
-    data = cursor.fetchall()
     conn.commit()
+    data = cursor.fetchall()
 
     rank = {'rank': []}
     # compresão de dicionario
@@ -40,42 +40,48 @@ def select_all():
 
 
 # insere dados novos
-def insert(*args):
+def insert(*data):
     """
-        ex:
-        nome, cor, score
+        params:
+            'Joaquim',
+            '#ff0',
+            1100
     """
-    command = "INSERT INTO rank VALUES (?, ?, ?)"
-    try:
-        cursor.executemany(command, [args])
-        return args, True
-
-    except Exception as e:
-        raise f"ERRO\nOcorreu o seguinte erro\n--> {e}"
-
-    finally:
-        conn.commit()
-
-
-# faz update de dados
-def update_db(data):
-    """
-        dict = {'score': 100, 'user': 'Lucas'}
-    """
-    score = select_single(data['user'])[0][0]
-    return score
-    command = 'UPDATE rank SET score = score  where name == user'
+    print(data)
+    command = f'INSERT INTO rank VALUES {data}'
     try:
         cursor.execute(command)
-        return [data['score'], data['user']], True
+        return True
 
     except Exception as e:
-        raise f"ERRO\nOcorreu o seguinte erro\n--> {e}"
+        return False
 
     finally:
         conn.commit()
 
 
+# atualização dados existentes
+def update_db(**data):
+    """
+        params:
+            score=100,
+            name='Lucas'
+    """
+    data['score'] += select_single(data['name'])[2]
+    command = f'UPDATE rank SET score = {data["score"]} WHERE name == "{data["name"]}"'
+    try:
+        cursor.execute(command)
+        return True
+
+    except Exception as e:
+        return False
+
+    finally:
+        conn.commit()
+
+
+
+"""
 data = [{'score': 400, 'user': 'Gustavo'},
         {'score': 400, 'user': 'Daniel'},
         {'score': 800, 'user': 'Alexandre'},
@@ -89,8 +95,5 @@ data = [{'score': 400, 'user': 'Gustavo'},
         {'score': 600, 'user': 'Saymon'},
         {'score': 300, 'user': 'Beijamin'},
         {'score': 800, 'user': 'Arthur'}]
+"""
 
-
-y = select_single('Gustavo')
-
-print(y)
