@@ -82,20 +82,3 @@ def update_db(**data):
 
 
 
-pontos = [{'name': 'Gustavo'},
-        {'name': 'Daniel'},
-        {'name': 'Alexandre'},
-        {'name': 'Joaquim'},
-        {'name': 'Luca'},
-        {'name': 'Luis'},
-        {'name': 'Luigi'},
-        {'name': 'Victor'},
-        {'name': 'Kauã'},
-        {'name': 'Pedro'},
-        {'name': 'Saymon'},
-        {'name': 'Beijamin'},
-        {'name': 'Arthur'}]
-
-a = select_all()
-print(a)
-
