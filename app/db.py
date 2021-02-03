@@ -97,6 +97,3 @@ def remove_usr(name):
 
     finally:
         conn.commit()
-
-
-update_db(name='Arthur Bottega', score=700)
