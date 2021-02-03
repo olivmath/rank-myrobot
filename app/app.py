@@ -26,7 +26,6 @@ def edit():
 	return render_template('edit.html')
 
 
-
 @app.route('/login')
 def login():
 	return render_template('login.html')
