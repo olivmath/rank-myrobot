@@ -80,5 +80,23 @@ def update_db(**data):
         conn.commit()
 
 
+# remove dados existentes
+def remove_usr(name):
+    """
+        params:
+            'Joaquim',
+    """
+    print(name)
+    command = f'DELETE FROM rank WHERE name = "{name}"'
+    try:
+        cursor.execute(command)
+        return True
+
+    except Exception as e:
+        return False
+
+    finally:
+        conn.commit()
 
 
+update_db(name='Arthur Bottega', score=700)
