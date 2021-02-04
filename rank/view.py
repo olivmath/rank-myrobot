@@ -44,12 +44,14 @@ def update_user():
 	update_db(name=form['user'], score=int(form['score']))
 	return render_template('edit.html')
 
+
 @app.route('/insert_user', methods=['POST'])
 def insert_user():
 	form = dict(request.form)
 	print(form)
 	insert_db(form['user'], form['color'], int(form['score']))
 	return render_template('edit.html')
+
 
 @app.route('/delete_user', methods=['POST'])
 def delete_user():
