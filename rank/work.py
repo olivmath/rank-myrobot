@@ -40,7 +40,7 @@ def select_all():
 
 
 # insere dados novos
-def insert(*data):
+def insert_db(*data):
     """
         params:
             'Joaquim',
@@ -81,7 +81,7 @@ def update_db(**data):
 
 
 # remove dados existentes
-def remove_usr(name):
+def delete_db(name):
     """
         params:
             'Joaquim',

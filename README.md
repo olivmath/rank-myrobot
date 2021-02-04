@@ -1,8 +1,11 @@
-# rank-myrobot
+## Intalando Ambiente Virtual e Pacotes
+<!--ts-->
+* virtualenv env
+* source env/bin/activate
+* pip install -r requirements.txt
+<!--te-->
 
-## Back-end
-Banco de dados em SQLite salva os pontos os nomes e as cores referente a cada nome.<br>
-Flask faz query, insert e update e serve no localhost.
-
-## Front-end
-JavaScript faz request no Flask trata os dados e renderiza no Html.
+## Rodando App
+<!--ts-->
+* $ flask run
+<!--te-->
