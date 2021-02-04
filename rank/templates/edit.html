@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <form action="http://127.0.0.1:5000/update_user" method="post">
+        <input type="text" id="update_user" name="user" placeholder="user">
+        <input type="text" id="update_score" name="score" placeholder="score">
+        <button type="submit" id="update">Atualizar Pontos</button>
+    </form>
+
+    <br>
+    <form action="http://127.0.0.1:5000/insert_user" method="post">
+        <input type="text" id="insert_user" name="user" placeholder="user">
+        <input type="text" id="insert_color" name="color" placeholder="color">
+        <input type="text" id="insert_score" name="score" placeholder="score">
+        <button type="submit" id="insert">Novo Aluno</button>
+    </form>
+
+    <br>
+    <form action="http://127.0.0.1:5000/delete_user" method="post">
+        <input type="text" id="delete_user" name="user" placeholder="user">
+        <button type="submit" id="delete">Deletar Aluno</button>
+    </form>
+
+    <br>
+    <a href="rank">RANK</a>
+
+    <script type="text/javascript">
+    	
+    	// Jogar um alerta na tela ao atulizar pontos de aluno
+
+        let insert_btn = document.querySelector('#insert')
+        let update_btn = document.querySelector('#update')
+        let delete_btn = document.querySelector('#delete')
+
+
+        insert_btn.onclick = function() {
+            let insert_user = document.querySelector("#insert_user").value
+            let insert_color = document.querySelector("#insert_color").value
+            let insert_score = document.querySelector("#insert_score").value
+            let msg = `Adicionar ${insert_user} com ${insert_score} pontos ?`
+
+            window.alert(msg)
+        }
+
+        update_btn.onclick = function() {
+            let update_user = document.querySelector("#update_user").value
+            let update_score = document.querySelector("#update_score").value
+            let msg = `Adicionar ${update_score} pontos para ${update_user} ?`
+
+            window.alert(msg)
+        }
+
+        delete_btn.onclick = function() {
+            let delete_user = document.querySelector("#delete_user").value
+            let msg = `Deletar ${delete_user} ?`
+
+            window.alert(msg)
+        }
+
+
+    </script>
+</body>
+</html>

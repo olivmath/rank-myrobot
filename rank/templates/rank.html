@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Rank</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href="{{ url_for('static', filename='style.css')}}" rel="stylesheet">
+</head>
+
+<body>
+	<ol class="flex-container">
+		{% for i in rank['rank'] %}
+		<li>
+			<div class="flex-item">
+				<p class="name" style="color:{{ i['color'] }}">{{ i['name'] }}</p>
+
+				<p class="score">{{ i['score'] }}</p>
+
+				{% if i['score'] >= 10000 %}
+				<img src="{{url_for('static', filename='Vibranium.png')}}" alt="Vibranium">
+				{% elif i['score'] >= 7500 %}
+				<img src="{{url_for('static', filename='Tungstenium.png')}}" alt="Tungstenium">
+				{% elif i['score'] >= 5000 %}
+				<img src="{{url_for('static', filename='Adamantium.png')}}" alt="Adamantium">
+				{% elif i['score'] >= 3000 %}
+				<img src="{{url_for('static', filename='Gold.png')}}" alt="Gold">
+				{% elif i['score'] >= 2000 %}
+				<img src="{{url_for('static', filename='Silver.png')}}" alt="Silver">
+				{% elif i['score'] >= 1000 %}
+				<img src="{{url_for('static', filename='Bronze.png')}}" alt="Bronze">
+				{% else%}
+				<img src="{{url_for('static', filename='Iron.png')}}" alt="Iron">
+				{% endif %}
+			</div>
+		</li>
+		{% endfor %}
+	</ol>
+
+</body>
+
+</html>
