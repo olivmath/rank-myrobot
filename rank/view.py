@@ -6,7 +6,6 @@ from rank import app, settings
 
 user = getenv("LOGIN")
 pwd = getenv("PASSWORD")
-print(user, pwd)
 
 
 @app.route('/')
