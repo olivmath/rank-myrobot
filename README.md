@@ -1,11 +1,12 @@
 ## Intalando Ambiente Virtual e Pacotes
-<!--ts-->
-* virtualenv env
-* source env/bin/activate
-* pip install -r requirements.txt
-<!--te-->
+
+```
+> virtualenv env
+> source env/bin/activate
+(env)> pip install -r requirements.txt
+```
 
 ## Rodando App
-<!--ts-->
-* $ flask run
-<!--te-->
+```
+flask run
+```
