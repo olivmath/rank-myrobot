@@ -8,12 +8,8 @@ user = getenv("LOGIN")
 pwd = getenv("PASSWORD")
 print(user, pwd)
 
+
 @app.route('/')
-def home():
-	return render_template('index.html')
-
-
-@app.route('/rank')
 def rank():
 	rank = select_all()
 	return render_template('rank.html', rank=rank)
