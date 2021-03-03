@@ -54,4 +54,3 @@ def delete_user():
 	print(f"Usuario {form['user']} Deletado")
 	delete_db(form['user'])
 	return render_template('edit.html')
-
