@@ -97,3 +97,13 @@ def delete_db(name):
 
     finally:
         conn.commit()
+
+
+
+def new_season():
+    rank = select_all()
+
+    print(list(map(lambda x:
+        update_db(name=x['name'], score=x['score'] * -1),
+        rank['rank'])
+    ))  
