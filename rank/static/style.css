@@ -1,18 +1,19 @@
 
 img {
-	height: 220px;
-	width: 400px;
+	height: 110px;
+	width: 200px;
 	margin: auto;
 }
 
 .flex-item {
 	display: flex;
-	margin: 30px;
+	margin: auto;
+	height: 100px;
 }
 
 p {
 	font-family: 'Goldman', cursive;
-	font-size: 50px	;
+	font-size: 30px	;
 	font-weight: 600;
 	text-align: left;
 }
@@ -33,7 +34,7 @@ ul {
 }
 
 li {
-	font-size: 50px;
+	font-size: 30px;
 	font-weight: 600;
 	margin-left: 200px;
 	/*color: #33d33b;*/
@@ -42,6 +43,6 @@ li {
 }
 
 .menu {
-	font-size: 30px;
+	font-size: 20px;
 	color: red;
 }
