@@ -1,18 +1,18 @@
 # Rank
 
-**Vibranium** >1000 
+- **Vibranium** >1000 
 
-**Tungstenium** >= 7500
+- **Tungstenium** >= 7500
 
-**Adamantium** >= 5000
+- **Adamantium** >= 5000
 
-**Gold** >= 3000
+- **Gold** >= 3000
 
-**Silver** >= 2000
+- **Silver** >= 2000
 
-**Bronze** >= 1000
+- **Bronze** >= 1000
 
-**Iron** >= 0
+- **Iron** >= 0
 
 
 
@@ -48,3 +48,8 @@ virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
 ```
+## Rodando
+```
+flask run
+```
+**Disponível em 127.0.0.1:5000*
