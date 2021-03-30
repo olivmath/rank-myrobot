@@ -16,13 +16,6 @@
 
 
 
-## Rodando App
-```
-flask run
-```
-
-Disponível na porta: **127.0.0.1:5000**
-
 # Regras
 ## Pontos Positivos
 - 200 terminar o projeto em 2h
@@ -52,4 +45,4 @@ pip install -r requirements.txt
 ```
 flask run
 ```
-**Disponível em 127.0.0.1:5000*
+*Disponível em 127.0.0.1:5000*
