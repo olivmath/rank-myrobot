@@ -107,3 +107,5 @@ def new_season():
         update_db(name=x['name'], score=x['score'] * -1),
         rank['rank'])
     ))  
+
+
